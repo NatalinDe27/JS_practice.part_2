@@ -26,26 +26,30 @@ console.log(greetUser.get(userJane))
 
 
 // 3) Создать функцию по превращению Map в object или object в Map в зависимости от того что было передано в функцию.
+
 let userObj = {
     name: 'John',
     age: 25,
 };
 
-let map = new Map();
-map.set('name', 'Ann');
-map.set(userBob, 38);
+let userMap = new Map();
+userMap.set('name', 'Ann');
+userMap.set(userBob, 38);
 
+function getPrototype (map) {
+    return map instanceof Map
+}
 
 function transform (param) {
-    if (typeof param === 'object') {
-        return new Map(Object.entries(param));
-    }
-    else if (param instanceof Map) {
+    if ( getPrototype (param)) {
         return Object.fromEntries(param.entries());
+    }
+    else {
+        return new Map(Object.entries(param));
     }
 }
 console.log(transform(userObj));
-console.log(transform(map));
+console.log(transform(userMap));
 
 
 
