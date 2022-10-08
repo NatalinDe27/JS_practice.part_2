@@ -28,11 +28,11 @@ dailyRoutine
         return time + 1;
     })
     .then ((time) => {
-        console.log(`I make homework fot IT or English at ${time} o\`clock.`)
+        console.log(`I make homework for IT or English at ${time} o\`clock.`)
         return time + 3;
     })
     .then ((time) => {
         console.log(`I go to bed at ${time} o\`clock.`)
     })
-    .finally(() => console.log('End of the day.'));
+    .finally(() => console.log('The End of the day.'));
 
